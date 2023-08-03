@@ -92,14 +92,14 @@ namespace CollectionsMasterConsoleUI
                 isNum = int.TryParse(Console.ReadLine(), out userNum);
 
 
-            } while (isNum);
+            } while (!isNum);
 
 
             NumberChecker(numbersList, userNum);
 
 
             
-
+            
 
             Console.WriteLine("-------------------");
 
@@ -111,6 +111,7 @@ namespace CollectionsMasterConsoleUI
 
             //TODO: Create a method that will remove all odd numbers from the list then print results
             Console.WriteLine("Evens Only!!");
+            OddKiller(numbersList);
 
             Console.WriteLine("------------------");
 
@@ -149,7 +150,7 @@ namespace CollectionsMasterConsoleUI
             for (int i = numberList.Count - 1; i >= 0; i--)
             {
 
-                if (numberList[i] % 2 != 0) 
+                if (numberList[i] % 2 == 0) 
                 {
                     evens.Add(numberList[i]);
                 }
@@ -162,7 +163,7 @@ namespace CollectionsMasterConsoleUI
         {
             if (numberList.Contains(searchNumber))
             {
-                Console.WriteLine($"Have Found {searchNumber}");
+                Console.WriteLine($"Have Found {searchNumber}.");
 
             }
             else 
